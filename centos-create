@@ -1,0 +1,14 @@
+/mnt/CE2AEB332AEB16ED/OSImages/CentOS-7-x86_64-DVD-1503-01.iso
+
+sudo virt-install \
+--virt-type=kvm \
+--name node-01 \
+--ram 1536 \
+--vcpus=2 \
+--os-variant=centos7.4 \
+--virt-type=kvm \
+--hvm \
+--cdrom=/mnt/CE2AEB332AEB16ED/OSImages/CentOS-7-x86_64-DVD-1503-01.iso \
+--network=bridge=virbr0,model=virtio \
+--graphics vnc \
+--disk path=/data/vms/node-01/node-01.qcow2,size=10,bus=virtio,format=qcow2

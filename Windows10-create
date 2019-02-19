@@ -1,0 +1,12 @@
+sudo virt-install \
+--virt-type=kvm \
+--name node-03 \
+--ram 1536 \
+--vcpus=2 \
+--os-variant=win10 \
+--virt-type=kvm \
+--hvm \
+--cdrom=/mnt/CE2AEB332AEB16ED/OSImages/Windows10_EN_OEM/Windows10_Pro-Core_x64_EN.ISO \
+--network=bridge=virbr0,model=virtio \
+--graphics vnc \
+--disk path=/data/vms/node-03.qcow2,size=20,bus=virtio,format=qcow2

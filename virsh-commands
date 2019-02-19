@@ -1,0 +1,20 @@
+===============start-stop-service===========
+sudo systemctl start libvirtd
+
+================config file==================
+cd /etc/libvirt/qemu/
+
+================view config =================
+sudo virsh dumpxml node-01
+vi /etc/libvirt/qemu/node-01
+
+================useful commands==============
+
+virt-viewer node-01               // virt-viewer --connect qemu:///system
+virsh list --all                  //  virsh -c qemu:///system list --all
+virsh shutdown $VM_ID
+virsh start $VM_ID
+virsh reboot node-02
+virsh destroy node-02             //force poweroff
+virsh undefine VM_NAME            //delete vm
+virsh net-dhcp-leases default
